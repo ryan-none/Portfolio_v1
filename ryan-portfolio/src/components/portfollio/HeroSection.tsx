@@ -22,7 +22,7 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col lg:flex-row items-center gap-12">
         {/* Left Content */}
-        <div className="w-full lg:w-6/12 text-center lg:text-left">
+        <div className="w-full lg:w-6/12 text-center lg:text-left mt-20 sm:mt-20 md:mt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,21 +106,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ArrowDown className="text-muted-foreground" size={24} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

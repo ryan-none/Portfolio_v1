@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "../ScrollReveal";
-import { ExternalLink, Gamepad2, ListChecks } from "lucide-react";
+import { ExternalLink, Gamepad2, ListChecks, LockKeyhole ,CalendarDays  } from "lucide-react";
 
 const projects = [
   {
@@ -16,6 +16,20 @@ const projects = [
       "A responsive web application for Task Management, focusing on user-friendly navigation. Utilized ReactJS and Tailwind for front-end development, ensuring seamless user interactions.",
     tech: ["ReactJS", "Tailwind CSS", "Web App"],
     icon: ListChecks,
+  },
+  {
+    title: "SeVault: Secure File Storage",
+    description:
+      "A browser extension designed for secure local storage of credentials and sensitive files. Implemented data encryption to protect stored information, with a fully offline architecture to eliminate server-side exposure and reduce security risks.",
+    tech: ["SveltKit", "Tailwind CSS", "GIN Web Framework", "Browser Extension"],
+    icon: LockKeyhole,
+  },
+  {
+    title: "PTPlanner: Personal Training Scheduler",
+    description:
+      "A responsive web application for scheduling and managing personal training sessions.",
+    tech: ["Jinja", "CSS", "HTML", "Flask", "Web App"],
+    icon: CalendarDays,
   },
 ];
 
