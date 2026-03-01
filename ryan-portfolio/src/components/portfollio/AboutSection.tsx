@@ -36,7 +36,7 @@ const AboutSection = () => {
               </p>
               <ul className="grid grid-cols-2 gap-2 mt-4 font-mono text-sm">
                 {["ReactJS", "TypeScript", "HTML & CSS", "Figma" , "JavaScript", "GIN Web Framework", "Tailwind CSS", "SvelteKit", "React Native Expo", "PostgreSQL"].map(
-                  (tech, i) => (
+                  (tech) => (
                     <li key={tech} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary">▹</span> {tech}
                     </li>

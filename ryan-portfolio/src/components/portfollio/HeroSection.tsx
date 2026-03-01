@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 
 const techStack = [
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
