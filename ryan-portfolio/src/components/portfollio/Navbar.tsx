@@ -115,7 +115,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-card border-b border-border overflow-hidden"
           >
-            <ul className="flex flex-col items-center gap-6 py-8">
+            <ul className="flex flex-col gap-6 p-8">
               {navLinks.map((link, i) => (
                 <li key={link.href}>
                   <a
