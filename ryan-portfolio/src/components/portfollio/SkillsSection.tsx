@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "../ScrollReveal";
 
+
 const skills = [
-  { name: "ReactJS", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "JavaScript", level: 90 },
-  { name: "Tailwind CSS", level: 90 },
-  { name: "SvelteKit", level: 75 },
-  { name: "React Native Expo", level: 70 },
-  { name: "PostgreSQL", level: 70 },
-  { name: "HTML5 / CSS", level: 95 },
-  { name: "Figma", level: 80 },
-  { name: "Wireframe & Prototype", level: 80 },
+  { name: "ReactJS", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "TypeScript", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "JavaScript", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "Tailwind CSS", level: 90, icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
+  { name: "SvelteKit", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
+  { name: "React Native Expo", level: 70, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "PostgreSQL", level: 70, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { name: "HTML5 / CSS", level: 95, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "Figma", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "Wireframe & Prototype", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "Git", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "Gin Web Framework", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
 ];
 
 const SkillsSection = () => {
@@ -29,19 +32,12 @@ const SkillsSection = () => {
         <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6">
           {skills.map((skill, i) => (
             <ScrollReveal key={skill.name} delay={i * 0.05}>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-mono text-foreground">{skill.name}</span>
-                  <span className="text-xs font-mono text-muted-foreground">{skill.level}%</span>
-                </div>
-                <div className="h-2 rounded-full bg-secondary overflow-hidden">
-                  <motion.div
-                    className="h-full rounded-full bg-primary"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  />
+              <div className="flex items-center gap-3">
+                <img src={skill.icon} alt={skill.name} className="w-6 h-6 object-contain" />
+                <div className="flex-1">
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-mono text-foreground">{skill.name}</span>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

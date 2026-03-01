@@ -1,4 +1,5 @@
 import ScrollReveal from "../ScrollReveal";
+import Profile from "../../assets/graduation-pic.jpg";
 
 const AboutSection = () => {
   return (
@@ -34,7 +35,7 @@ const AboutSection = () => {
                 Here are a few technologies I've been working with recently:
               </p>
               <ul className="grid grid-cols-2 gap-2 mt-4 font-mono text-sm">
-                {["ReactJS", "TypeScript", "Tailwind CSS", "SvelteKit", "React Native Expo", "PostgreSQL"].map(
+                {["ReactJS", "TypeScript", "HTML & CSS", "Figma" , "JavaScript", "GIN Web Framework", "Tailwind CSS", "SvelteKit", "React Native Expo", "PostgreSQL"].map(
                   (tech, i) => (
                     <li key={tech} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary">▹</span> {tech}
@@ -49,10 +50,10 @@ const AboutSection = () => {
             <div className="relative group mx-auto w-fit">
               <div className="w-56 h-56 md:w-64 md:h-64 rounded-lg bg-secondary overflow-hidden relative z-10">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-gradient">RB</span>
+                  <img src={Profile} alt="Profile" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <div className="absolute top-4 left-4 w-56 h-56 md:w-64 md:h-64 rounded-lg border-2 border-primary -z-0 group-hover:top-2 group-hover:left-2 transition-all duration-300" />
+              <div className="absolute top-4 left-4 w-56 h-56 md:w-64 md:h-64 rounded-lg border-2 border-[#2bd4bd] -z-0 group-hover:top-2 group-hover:left-2 transition-all duration-300" />
             </div>
           </ScrollReveal>
         </div>

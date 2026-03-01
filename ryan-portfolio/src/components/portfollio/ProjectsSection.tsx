@@ -54,7 +54,7 @@ const ProjectsSection = () => {
 
                 <ul className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((t) => (
-                    <li key={t} className="text-xs font-mono text-primary/80 bg-primary/10 px-2 py-1 rounded">
+                    <li key={t} className="text-xs font-mono badge px-2 py-1 rounded">
                       {t}
                     </li>
                   ))}

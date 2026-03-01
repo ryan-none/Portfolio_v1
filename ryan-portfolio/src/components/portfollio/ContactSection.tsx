@@ -1,5 +1,6 @@
 import ScrollReveal from "../ScrollReveal";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Resume from "../../assets/ryan_resume.pdf";
 
 const ContactSection = () => {
   return (
@@ -42,6 +43,17 @@ const ContactSection = () => {
             className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
           >
             Say Hello 👋
+          </a>
+
+          
+          <a
+            href={Resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="inline-flex ml-5 items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
+          >
+            My Resume 📄
           </a>
         </ScrollReveal>
       </div>
