@@ -13,11 +13,36 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#about");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks.map((link) => document.querySelector(link.href));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.6 } 
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
   }, []);
 
   return (
@@ -45,7 +70,12 @@ const Navbar = () => {
             >
               <a
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+                onClick={() => setActiveLink(link.href)}
+                className={`text-sm font-mono transition-colors ${
+                  activeLink === link.href
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 <span className="text-gradient">0{i + 1}.</span> {link.label}
               </a>
@@ -76,8 +106,15 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+                    onClick={() => {
+                      setActiveLink(link.href);
+                      setMobileOpen(false); // Close mobile menu
+                    }}
+                    className={`text-sm font-mono transition-colors ${
+                      activeLink === link.href
+                        ? "text-primary font-bold"
+                        : "text-muted-foreground hover:text-primary"
+                    }`}
                   >
                     <span className="text-primary">0{i + 1}.</span> {link.label}
                   </a>

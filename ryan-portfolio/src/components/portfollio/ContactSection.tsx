@@ -38,23 +38,25 @@ const ContactSection = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <a
-            href="mailto:barcosryan2@gmail.com"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
-          >
-            Say Hello 👋
-          </a>
+          <div className="gap-4 flex flex-col sm:flex-row items-center justify-center">
+            <a
+              href="mailto:barcosryan2@gmail.com"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              Say Hello 👋
+            </a>
 
-          
-          <a
-            href={Resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            className="inline-flex ml-5 items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
-          >
-            My Resume 📄
-          </a>
+            
+            <a
+              href={Resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-mono text-sm rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              My Resume 📄
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>
