@@ -133,3 +133,40 @@ html {
   background-color: hsl(var(--primary) / 0.1);
   color: hsl(var(--primary));
 }
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-5 {
+  bottom: 1.25rem; /* 20px */
+}
+
+.right-5 {
+  right: 1.25rem; /* 20px */
+}
+
+.bg-primary {
+  background-color: #0e1115; 
+}
+
+.text-white {
+  color: #2bd4bd;
+  border: 2px solid #2bd4bd;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: #14181d;
+}

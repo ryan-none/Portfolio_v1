@@ -31,7 +31,7 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 0.6 } 
+      { threshold: 0.6 }
     );
 
     sections.forEach((section) => {
@@ -44,6 +44,20 @@ const Navbar = () => {
       });
     };
   }, []);
+
+  const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    console.log("Clicked link:", href);
+    const section = document.querySelector(href);
+    console.log("Target section:", section);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setActiveLink(href);
+    setTimeout(() => {
+      setMobileOpen(false);
+    }, 300);
+  };
 
   return (
     <motion.nav
@@ -70,7 +84,7 @@ const Navbar = () => {
             >
               <a
                 href={link.href}
-                onClick={() => setActiveLink(link.href)}
+                onClick={(e) => handleMenuClick(e, link.href)}
                 className={`text-sm font-mono transition-colors ${
                   activeLink === link.href
                     ? "text-primary font-bold"
@@ -106,10 +120,7 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => {
-                      setActiveLink(link.href);
-                      setMobileOpen(false); // Close mobile menu
-                    }}
+                    onClick={(e) => handleMenuClick(e, link.href)}
                     className={`text-sm font-mono transition-colors ${
                       activeLink === link.href
                         ? "text-primary font-bold"
